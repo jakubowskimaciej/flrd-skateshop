@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import App from 'views/App';
 
+//styles
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from 'utils/GlobalStyles';
 import theme from 'utils/theme';
@@ -12,7 +14,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>
 );
