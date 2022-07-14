@@ -1,24 +1,22 @@
+import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import React from 'react';
-import styled from 'styled-components';
+import { Routes, Route } from 'react-router-dom';
+import Homepage from './Homepage';
 
-const Wrapper = styled.main`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  h1 {
-    font-size: ${({ theme }) => theme.fontSize.xxxl};
-    font-weight: 700;
-  }
-`;
+const Clothes = () => (
+  <>
+    <h2>Clothes page</h2>
+  </>
+);
 
 const App = () => {
   return (
-    <Wrapper>
-      <h1>App</h1>
-    </Wrapper>
+    <MainTemplate>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/clothes" element={<Clothes />} />
+      </Routes>
+    </MainTemplate>
   );
 };
 
