@@ -18,7 +18,7 @@ const Navigation = () => {
         <StyledLink to="/clothes">clothes</StyledLink>
         <StyledLink to="/skateboard">skateboard</StyledLink>
         <StyledLink to="/contact">contact</StyledLink>
-        <StyledLink to="/sign-in">sign in</StyledLink>
+        <StyledLink to="/auth">sign in</StyledLink>
       </LinkWrapper>
     </NavWrapper>
   );
