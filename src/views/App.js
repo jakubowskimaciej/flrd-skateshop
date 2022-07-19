@@ -2,6 +2,7 @@ import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Homepage from './Homepage';
+import Login from './Login';
 
 const Clothes = () => (
   <>
@@ -15,6 +16,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/clothes" element={<Clothes />} />
+        <Route path="/auth" element={<Login />} />
       </Routes>
     </MainTemplate>
   );
