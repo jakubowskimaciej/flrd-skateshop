@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UsersContext } from 'providers/UsersProvider';
 import {
   NavWrapper,
   StyledTitleLink,
   LinkWrapper,
   StyledLink,
 } from './Navigation.styles';
+import { signOutUser } from 'utils/firebase/firebase.utils';
 
 const Navigation = () => {
+  const { currentUser } = useContext(UsersContext);
+
   return (
     <NavWrapper>
       <StyledTitleLink to="/">
@@ -18,7 +22,13 @@ const Navigation = () => {
         <StyledLink to="/clothes">clothes</StyledLink>
         <StyledLink to="/skateboard">skateboard</StyledLink>
         <StyledLink to="/contact">contact</StyledLink>
-        <StyledLink to="/auth">sign in</StyledLink>
+        {!currentUser ? (
+          <StyledLink to="/auth">sign in</StyledLink>
+        ) : (
+          <StyledLink as="span" onClick={signOutUser}>
+            sign out
+          </StyledLink>
+        )}
       </LinkWrapper>
     </NavWrapper>
   );

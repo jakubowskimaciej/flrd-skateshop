@@ -39,7 +39,6 @@ const Registration = () => {
         email,
         password
       );
-
       await createUserDocumentFromAuth(user, { displayName });
       setFormValues(initialState);
     } catch (err) {
@@ -58,7 +57,7 @@ const Registration = () => {
       <FormWrapper onSubmit={handleFormSubmit}>
         <FormField
           label="display name"
-          name="name"
+          name="displayName"
           type="text"
           id="displayName"
           value={formValues.displayName}
@@ -83,7 +82,7 @@ const Registration = () => {
         <FormField
           label="confirm password"
           type="password"
-          name="confirm password"
+          name="confirmPassword"
           id="confirmPassword"
           value={formValues.confirmPassword}
           onChange={handleInputChange}

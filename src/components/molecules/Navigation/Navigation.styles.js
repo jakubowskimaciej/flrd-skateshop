@@ -20,9 +20,14 @@ export const borderAnimation = keyframes`
 `;
 
 export const LinkWrapper = styled.div`
-  width: 40%;
-  display: flex;
-  justify-content: space-between;
+  display: none;
+
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const StyledTitleLink = styled(Link)`
