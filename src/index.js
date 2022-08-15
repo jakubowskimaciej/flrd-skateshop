@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from 'views/App';
+import { UsersProvider } from 'providers/UsersProvider';
 
 //styles
 import { ThemeProvider } from 'styled-components';
@@ -15,7 +16,9 @@ root.render(
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <BrowserRouter>
-        <App />
+        <UsersProvider>
+          <App />
+        </UsersProvider>
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>

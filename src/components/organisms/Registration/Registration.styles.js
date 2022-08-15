@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 40rem;
-  height: 50rem;
+  height: 40rem;
   padding: 2rem;
   color: var(--color-darkGrey);
 

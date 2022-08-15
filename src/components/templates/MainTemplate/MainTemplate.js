@@ -3,10 +3,14 @@ import styled from 'styled-components';
 import Navigation from 'components/molecules/Navigation/Navigation';
 
 const Wrapper = styled.main`
+  position: relative;
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-rows: 8rem 1fr;
+
+  ${({ theme }) => theme.mediaQueries.desktop} {
+    display: grid;
+    grid-template-rows: 8rem 1fr;
+  }
 `;
 
 const MainTemplate = ({ children }) => {

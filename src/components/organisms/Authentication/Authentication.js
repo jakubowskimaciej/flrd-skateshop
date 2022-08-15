@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import {
-  createUserDocumentFromAuth,
-  signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
+  signInWithGoogleRedirect,
 } from 'utils/firebase/firebase.utils';
 
 import { FormWrapper, Wrapper } from '../Registration/Registration.styles';
@@ -20,8 +19,7 @@ const Authentication = () => {
   const { email, password } = formValues;
 
   const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGoogleRedirect();
   };
 
   const handleInputChange = (e) => {
@@ -33,11 +31,7 @@ const Authentication = () => {
     e.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
-      console.log(response);
+      await signInAuthUserWithEmailAndPassword(email, password);
       setFormValues(initialState);
     } catch (err) {
       switch (err.code) {
