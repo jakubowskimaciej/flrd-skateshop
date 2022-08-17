@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ReactComponent as ShoppingIcon } from 'assets/cart-icon.svg';
 import { Wrapper } from './CartIcon.styles';
+import { CartContext } from 'providers/CartProvider';
 
 const CartIcon = ({ ...props }) => {
+  const { cartItemCount } = useContext(CartContext);
+
   return (
     <Wrapper {...props}>
       <ShoppingIcon />
-      <span>0</span>
+      <span>{cartItemCount}</span>
     </Wrapper>
   );
 };

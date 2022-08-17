@@ -8,8 +8,8 @@ const Clothes = () => {
 
   return (
     <Wrapper>
-      {products.map((itemData) => (
-        <ProductCard key={itemData.id} itemData={itemData} />
+      {products.map((productData) => (
+        <ProductCard key={productData.id} product={productData} />
       ))}
     </Wrapper>
   );

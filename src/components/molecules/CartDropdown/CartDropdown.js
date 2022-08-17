@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from 'components/atoms/Button/Button';
 import styled from 'styled-components';
+import CartItem from '../CartItem/CartItem';
+import { CartContext } from 'providers/CartProvider';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -27,9 +29,15 @@ const ItemsWrapper = styled.div`
 `;
 
 const CartDropdown = () => {
+  const { cartItems } = useContext(CartContext);
+
   return (
     <Wrapper>
-      <ItemsWrapper></ItemsWrapper>
+      <ItemsWrapper>
+        {cartItems.map((cartItem) => (
+          <CartItem key={cartItem.id} cartItem={cartItem} />
+        ))}
+      </ItemsWrapper>
       <Button>go to checkout</Button>
     </Wrapper>
   );
