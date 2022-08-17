@@ -7,10 +7,13 @@ import {
   StyledLink,
 } from './Navigation.styles';
 import { signOutUser } from 'utils/firebase/firebase.utils';
+import CartIcon from 'components/atoms/CartIcon/CartIcon';
+import CartDropdown from '../CartDropdown/CartDropdown';
+import { CartContext } from 'providers/CartProvider';
 
 const Navigation = () => {
   const { currentUser } = useContext(UsersContext);
-
+  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
   return (
     <NavWrapper>
       <StyledTitleLink to="/">
@@ -29,7 +32,9 @@ const Navigation = () => {
             sign out
           </StyledLink>
         )}
+        <CartIcon onClick={() => setIsCartOpen(!isCartOpen)} />
       </LinkWrapper>
+      {isCartOpen ? <CartDropdown /> : null}
     </NavWrapper>
   );
 };

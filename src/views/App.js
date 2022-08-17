@@ -1,14 +1,9 @@
-import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import React from 'react';
+import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import { Routes, Route } from 'react-router-dom';
+import Clothes from './Clothes';
 import Homepage from './Homepage';
 import Login from './Login';
-
-const Clothes = () => (
-  <>
-    <h2>Clothes page</h2>
-  </>
-);
 
 const App = () => {
   return (
