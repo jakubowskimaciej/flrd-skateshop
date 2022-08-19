@@ -1,33 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import { ItemDetails, Wrapper } from './CartItem.styles';
 
-const Wrapper = styled.div`
-  width: 100%;
-  display: flex;
-  height: 80px;
-  margin-bottom: 15px;
-
-  img {
-    width: 30%;
-    object-fit: cover;
-  }
-`;
-
-const ItemDetails = styled.div`
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 10px 20px;
-
-  span {
-    font-size: ${({ theme }) => theme.fontSize.m};
-  }
-`;
-
-const CartItem = ({ cartItem }) => {
-  const { imageUrl, price, name, quantity } = cartItem;
+const CartItem = ({ cartItem: { imageUrl, price, name, quantity } }) => {
   return (
     <Wrapper>
       <img src={imageUrl} alt={name} />

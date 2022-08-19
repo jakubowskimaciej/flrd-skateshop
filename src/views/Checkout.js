@@ -1,24 +1,11 @@
 import React, { useContext } from 'react';
 import { CartContext } from 'providers/CartProvider';
-import {
-  ButtonWrapper,
-  CheckoutHeader,
-  CheckoutItem,
-  ImageWrapper,
-  StyledTotal,
-  Wrapper,
-} from './Checkout.styles';
+import { CheckoutHeader, StyledTotal, Wrapper } from './Checkout.styles';
 import { Button } from 'components/atoms/Button/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CheckoutItem from 'components/molecules/CheckoutItem/CheckoutItem';
 
 const Checkout = () => {
-  const {
-    cartItems,
-    addItemToCart,
-    removeItemFromCart,
-    clearItemFromCart,
-    cartTotal,
-  } = useContext(CartContext);
+  const { cartItems, cartTotal } = useContext(CartContext);
 
   return (
     <Wrapper>
@@ -40,23 +27,7 @@ const Checkout = () => {
         </div>
       </CheckoutHeader>
       {cartItems.map((item) => (
-        <CheckoutItem>
-          <ImageWrapper>
-            <img src={item.imageUrl} alt={item.name} />
-          </ImageWrapper>
-          <p>{item.name}</p>
-          <span>
-            <div onClick={() => removeItemFromCart(item)}>&#10094;</div>
-            <p>{item.quantity}</p>
-            <div onClick={() => addItemToCart(item)}>&#10095;</div>
-          </span>
-          <p>$ {item.price}</p>
-          <ButtonWrapper>
-            <Button isSmall onClick={() => clearItemFromCart(item)}>
-              <FontAwesomeIcon icon={['fas', 'trash-alt']} />
-            </Button>
-          </ButtonWrapper>
-        </CheckoutItem>
+        <CheckoutItem key={item.id} item={item} />
       ))}
       <StyledTotal>
         <div>
