@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { CartContext } from 'providers/CartProvider';
 import { StyledButton, StyledInfo, Wrapper } from './ProductCard.styles';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product }, category) => {
   const { name, price, imageUrl } = product;
   const { addItemToCart } = useContext(CartContext);
 

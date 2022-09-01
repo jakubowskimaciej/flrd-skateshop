@@ -33,7 +33,7 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledInfo = styled.div`
-  width: 70%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;

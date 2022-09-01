@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from 'views/App';
 import { UsersProvider } from 'providers/UsersProvider';
-import { ProductsProvider } from 'providers/ProductsProvider';
+import { CategoriesProvider } from 'providers/CategoriesProvider';
 
 //styles
 import { ThemeProvider } from 'styled-components';
@@ -19,11 +19,11 @@ root.render(
       <GlobalStyles />
       <BrowserRouter>
         <UsersProvider>
-          <ProductsProvider>
+          <CategoriesProvider>
             <CartProvider>
               <App />
             </CartProvider>
-          </ProductsProvider>
+          </CategoriesProvider>
         </UsersProvider>
       </BrowserRouter>
     </ThemeProvider>

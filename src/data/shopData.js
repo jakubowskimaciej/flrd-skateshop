@@ -1,4 +1,4 @@
-export const collection = [
+export const shopData = [
   {
     id: 1,
     title: 'hats',
@@ -115,13 +115,6 @@ export const collection = [
         imageUrl:
           'https://images.unsplash.com/photo-1619646176605-b7417fb53b1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
         price: 160,
-      },
-      {
-        id: 16,
-        name: 'Vans Old-Skool Grey',
-        imageUrl:
-          'https://images.unsplash.com/photo-1618686081236-3ef081793aa6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1743&q=80',
-        price: 190,
       },
       {
         id: 17,

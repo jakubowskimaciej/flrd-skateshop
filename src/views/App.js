@@ -1,7 +1,7 @@
 import React from 'react';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import { Routes, Route } from 'react-router-dom';
-import Clothes from './Clothes';
+import Shop from './Shop';
 import Homepage from './Homepage';
 import Login from './Login';
 import Checkout from './Checkout';
@@ -16,7 +16,7 @@ const App = () => {
     <MainTemplate>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/clothes" element={<Clothes />} />
+        <Route path="/shop/*" element={<Shop />} />
         <Route path="/auth" element={<Login />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>

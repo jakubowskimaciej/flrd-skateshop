@@ -22,7 +22,7 @@ const Navigation = () => {
         </h1>
       </StyledTitleLink>
       <LinkWrapper>
-        <StyledLink to="/clothes">clothes</StyledLink>
+        <StyledLink to="/shop">shop</StyledLink>
         <StyledLink to="/skateboard">skateboard</StyledLink>
         <StyledLink to="/contact">contact</StyledLink>
         {!currentUser ? (
