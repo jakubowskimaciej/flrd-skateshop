@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { UsersContext } from 'providers/UsersProvider';
 import {
   NavWrapper,
   StyledTitleLink,
@@ -10,9 +9,11 @@ import { signOutUser } from 'utils/firebase/firebase.utils';
 import CartIcon from 'components/atoms/CartIcon/CartIcon';
 import CartDropdown from '../CartDropdown/CartDropdown';
 import { CartContext } from 'providers/CartProvider';
+import { useSelector } from 'react-redux';
+import { selectCurrentUser } from 'features/user/user.selector';
 
 const Navigation = () => {
-  const { currentUser } = useContext(UsersContext);
+  const { currentUser } = useSelector(selectCurrentUser);
   const { isCartOpen, setIsCartOpen } = useContext(CartContext);
   return (
     <NavWrapper>

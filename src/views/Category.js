@@ -1,14 +1,15 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { CategoriesContext } from 'providers/CategoriesProvider';
 import ProductCard from 'components/molecules/ProductCard/ProductCard';
 import { ClothesWrapper } from 'components/organisms/CategoryPreview/CategoryPreview.styles';
 import { ButtonWrapper, Wrapper } from './Category.styles';
 import { Button } from 'components/atoms/Button/Button';
+import { useSelector } from 'react-redux';
+import { selectCategoriesMap } from 'features/categories/categories.selector';
 
 const Category = () => {
   const { category } = useParams();
-  const { categoriesMap } = useContext(CategoriesContext);
+  const { categoriesMap } = useSelector(selectCategoriesMap);
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 

@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
-import { CategoriesContext } from 'providers/CategoriesProvider';
+import React from 'react';
 import { Wrapper } from './Shop.styles';
 import CategoryPreview from 'components/organisms/CategoryPreview/CategoryPreview';
+import { useSelector } from 'react-redux';
+import { selectCategoriesMap } from 'features/categories/categories.selector';
 
 const Categories = () => {
-  const { categoriesMap } = useContext(CategoriesContext);
+  const { categoriesMap } = useSelector(selectCategoriesMap);
 
   return (
     <Wrapper>
